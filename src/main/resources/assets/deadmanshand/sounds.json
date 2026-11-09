@@ -1,0 +1,4138 @@
+{
+ "announcer.a000": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a000",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a001": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a001",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a002": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a002",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a003": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a003",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a004": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a004",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a005": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a005",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a006": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a006",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a007": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a007",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a008": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a008",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a009": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a009",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a010": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a010",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a011": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a011",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a012": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a012",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a013": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a013",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a014": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a014",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a015": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a015",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a016": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a016",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a017": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a017",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a018": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a018",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a019": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a019",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a020": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a020",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a021": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a021",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a022": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a022",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a023": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a023",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a024": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a024",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a025": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a025",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a026": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a026",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a027": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a027",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a028": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a028",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a029": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a029",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a030": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a030",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a031": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a031",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a032": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a032",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a033": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a033",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a034": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a034",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a035": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a035",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a036": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a036",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a037": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a037",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a038": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a038",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a039": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a039",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a040": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a040",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a041": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a041",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a042": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a042",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a043": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a043",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a044": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a044",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a045": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a045",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a046": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a046",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a047": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a047",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a048": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a048",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a049": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a049",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a050": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a050",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a051": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a051",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a052": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a052",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a053": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a053",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a054": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a054",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a055": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a055",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a056": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a056",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a057": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a057",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a058": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a058",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a059": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a059",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a060": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a060",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a061": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a061",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a062": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a062",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a063": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a063",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a064": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a064",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a065": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a065",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a066": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a066",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a067": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a067",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a068": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a068",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a069": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a069",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a070": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a070",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a071": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a071",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a072": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a072",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a073": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a073",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a074": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a074",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a075": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a075",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a076": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a076",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a077": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a077",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a078": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a078",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a079": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a079",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a080": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a080",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a081": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a081",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a082": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a082",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a083": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a083",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a084": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a084",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a085": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a085",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a086": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a086",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a087": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a087",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a088": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a088",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a089": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a089",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a090": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a090",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a091": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a091",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a092": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a092",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a093": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a093",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a094": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a094",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a095": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a095",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a096": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a096",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a097": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a097",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a098": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a098",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a099": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a099",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a100": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a100",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a101": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a101",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a102": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a102",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a103": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a103",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a104": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a104",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a105": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a105",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a106": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a106",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a107": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a107",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a108": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a108",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a109": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a109",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a110": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a110",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a111": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a111",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a112": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a112",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a113": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a113",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a114": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a114",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a115": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a115",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a116": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a116",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a117": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a117",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a118": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a118",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a119": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a119",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a120": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a120",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a121": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a121",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a122": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a122",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a123": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a123",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a124": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a124",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a125": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a125",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a126": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a126",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a127": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a127",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a128": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a128",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a129": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a129",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a130": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a130",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a131": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a131",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a132": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a132",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a133": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a133",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a134": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a134",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a135": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a135",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a136": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a136",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a137": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a137",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a138": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a138",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a139": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a139",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a140": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a140",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a141": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a141",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a142": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a142",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a143": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a143",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a144": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a144",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a145": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a145",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a146": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a146",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a147": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a147",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a148": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a148",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a149": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a149",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a150": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a150",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a151": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a151",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a152": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a152",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a153": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a153",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a154": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a154",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a155": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a155",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a156": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a156",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a157": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a157",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a158": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a158",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a159": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a159",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a160": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a160",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a161": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a161",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a162": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a162",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a163": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a163",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a164": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a164",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a165": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a165",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a166": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a166",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a167": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a167",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a168": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a168",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a169": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a169",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a170": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a170",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a171": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a171",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a172": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a172",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a173": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a173",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a174": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a174",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a175": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a175",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a176": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a176",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a177": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a177",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a178": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a178",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a179": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a179",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a180": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a180",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a181": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a181",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a182": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a182",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a183": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a183",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a184": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a184",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a185": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a185",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a186": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a186",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a187": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a187",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a188": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a188",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a189": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a189",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a190": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a190",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a191": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a191",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a192": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a192",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a193": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a193",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a194": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a194",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a195": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a195",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a196": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a196",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a197": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a197",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a198": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a198",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a199": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a199",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a200": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a200",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a201": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a201",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a202": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a202",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a203": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a203",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a204": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a204",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a205": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a205",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a206": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a206",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a207": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a207",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a208": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a208",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a209": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a209",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a210": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a210",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a211": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a211",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a212": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a212",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a213": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a213",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a214": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a214",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a215": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a215",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a216": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a216",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a217": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a217",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a218": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a218",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a219": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a219",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a220": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a220",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a221": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a221",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a222": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a222",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a223": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a223",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a224": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a224",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a225": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a225",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a226": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a226",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a227": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a227",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a228": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a228",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a229": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a229",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a230": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a230",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a231": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a231",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a232": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a232",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a233": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a233",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a234": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a234",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a235": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a235",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a236": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a236",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a237": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a237",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a238": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a238",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a239": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a239",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a240": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a240",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a241": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a241",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a242": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a242",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a243": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a243",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a244": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a244",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a245": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a245",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a246": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a246",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a247": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a247",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a248": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a248",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a249": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a249",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a250": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a250",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a251": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a251",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a252": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a252",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a253": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a253",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a254": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a254",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a255": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a255",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a256": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a256",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a257": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a257",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a258": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a258",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a259": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a259",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a260": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a260",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a261": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a261",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a262": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a262",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a263": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a263",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a264": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a264",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a265": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a265",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a266": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a266",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a267": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a267",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a268": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a268",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a269": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a269",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a270": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a270",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a271": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a271",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a272": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a272",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a273": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a273",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a274": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a274",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a275": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a275",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a276": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a276",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a277": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a277",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a278": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a278",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a279": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a279",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a280": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a280",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a281": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a281",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a282": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a282",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a283": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a283",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a284": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a284",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a285": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a285",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a286": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a286",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a287": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a287",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a288": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a288",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a289": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a289",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a290": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a290",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a291": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a291",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a292": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a292",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a293": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a293",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a294": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a294",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a295": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a295",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a296": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a296",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a297": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a297",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a298": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a298",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a299": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a299",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a300": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a300",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a301": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a301",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a302": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a302",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a303": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a303",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a304": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a304",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a305": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a305",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a306": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a306",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a307": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a307",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a308": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a308",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a309": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a309",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a310": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a310",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a311": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a311",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a312": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a312",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a313": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a313",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a314": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a314",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a315": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a315",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a316": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a316",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a317": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a317",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a318": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a318",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a319": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a319",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a320": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a320",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a321": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a321",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a322": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a322",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a323": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a323",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a324": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a324",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a325": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a325",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a326": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a326",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a327": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a327",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a328": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a328",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a329": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a329",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a330": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a330",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a331": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a331",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a332": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a332",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a333": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a333",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a334": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a334",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a335": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a335",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a336": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a336",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a337": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a337",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a338": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a338",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a339": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a339",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a340": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a340",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a341": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a341",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a342": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a342",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a343": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a343",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a344": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a344",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a345": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a345",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a346": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a346",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a347": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a347",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a348": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a348",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a349": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a349",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a350": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a350",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a351": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a351",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a352": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a352",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a353": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a353",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a354": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a354",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a355": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a355",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a356": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a356",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a357": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a357",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a358": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a358",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a359": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a359",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a360": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a360",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a361": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a361",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a362": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a362",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a363": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a363",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a364": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a364",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a365": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a365",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a366": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a366",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a367": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a367",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a368": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a368",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a369": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a369",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a370": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a370",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a371": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a371",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a372": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a372",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a373": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a373",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a374": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a374",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a375": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a375",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a376": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a376",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a377": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a377",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a378": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a378",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a379": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a379",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a380": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a380",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a381": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a381",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a382": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a382",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a383": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a383",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a384": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a384",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a385": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a385",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a386": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a386",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a387": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a387",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a388": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a388",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a389": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a389",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a390": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a390",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a391": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a391",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a392": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a392",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a393": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a393",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a394": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a394",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a395": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a395",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a396": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a396",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a397": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a397",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a398": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a398",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a399": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a399",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a400": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a400",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a401": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a401",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a402": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a402",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a403": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a403",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a404": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a404",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a405": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a405",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a406": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a406",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a407": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a407",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a408": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a408",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a409": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a409",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a410": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a410",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a411": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a411",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a412": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a412",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a413": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a413",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a414": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a414",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a415": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a415",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a416": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a416",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a417": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a417",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a418": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a418",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a419": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a419",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a420": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a420",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a421": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a421",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a422": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a422",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a423": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a423",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a424": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a424",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a425": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a425",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a426": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a426",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a427": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a427",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a428": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a428",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a429": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a429",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a430": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a430",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a431": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a431",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a432": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a432",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a433": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a433",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a434": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a434",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a435": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a435",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a436": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a436",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a437": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a437",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a438": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a438",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a439": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a439",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a440": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a440",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a441": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a441",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a442": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a442",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a443": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a443",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a444": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a444",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a445": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a445",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a446": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a446",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a447": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a447",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a448": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a448",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a449": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a449",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a450": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a450",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a451": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a451",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a452": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a452",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a453": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a453",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a454": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a454",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a455": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a455",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a456": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a456",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a457": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a457",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a458": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a458",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a459": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a459",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a460": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a460",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a461": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a461",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a462": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a462",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a463": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a463",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a464": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a464",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a465": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a465",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a466": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a466",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a467": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a467",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a468": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a468",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a469": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a469",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a470": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a470",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a471": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a471",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a472": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a472",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a473": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a473",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a474": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a474",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a475": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a475",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a476": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a476",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a477": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a477",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a478": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a478",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a479": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a479",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a480": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a480",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a481": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a481",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a482": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a482",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a483": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a483",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a484": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a484",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a485": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a485",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a486": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a486",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a487": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a487",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a488": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a488",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a489": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a489",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a490": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a490",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a491": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a491",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a492": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a492",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a493": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a493",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a494": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a494",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a495": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a495",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a496": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a496",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a497": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a497",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a498": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a498",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a499": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a499",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a500": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a500",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a501": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a501",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a502": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a502",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a503": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a503",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a504": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a504",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a505": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a505",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a506": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a506",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a507": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a507",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a508": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a508",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a509": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a509",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a510": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a510",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a511": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a511",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a512": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a512",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a513": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a513",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a514": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a514",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a515": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a515",
+    "stream": true
+   }
+  ]
+ },
+ "announcer.a516": {
+  "sounds": [
+   {
+    "name": "deadmanshand:announcer/a516",
+    "stream": true
+   }
+  ]
+ }
+}
