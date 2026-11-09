@@ -381,6 +381,7 @@ final class Parking extends Game {
         } else {
             burnt.add(level * CARS + k);
             world.playSound(null, cx, y, cz, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 2.0F, 0.9F);
+            instinct.flinch(new net.minecraft.util.math.Vec3d(cx + 0.5, y + 1, cz + 0.5), 16.0, 0.25F);
             world.spawnParticles(ParticleTypes.EXPLOSION, cx + 0.5, y + 1, cz + 0.5, 3, 1.0, 0.5, 1.0, 0.0);
             world.spawnParticles(ParticleTypes.LARGE_SMOKE, cx + 0.5, y + 1.5, cz + 0.5, 40, 1.0, 0.8, 1.0, 0.02);
             fail(who.getUuid(), "Wrong car.");

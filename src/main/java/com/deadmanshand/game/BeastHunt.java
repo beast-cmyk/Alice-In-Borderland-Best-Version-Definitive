@@ -288,6 +288,12 @@ final class BeastHunt extends Game {
         }
     }
 
+    /** The haunted house: where the unarmed run to. */
+    @Override
+    protected boolean refuge(Vec3d at) {
+        return hideout != null && at.squaredDistanceTo(Vec3d.ofBottomCenter(hideout)) < 6.0 * 6.0;
+    }
+
     /** The strangers: the brave ones take a weapon and go hunting, the rest run and hide. */
     private void think(Contestant contestant, List<Panther> pack) {
         Panther nearest = null;
@@ -326,15 +332,13 @@ final class BeastHunt extends Game {
                         Lines.pick(random, "Stay together! They pick off the ones who stray!", "Behind the carousel!", "Watch the cheetahs, they're fast!"));
             }
         } else if (best < 14.0 * 14.0) {
-            Vec3d away = contestant.getPos().subtract(nearest.getPos()).normalize().multiply(10.0);
-            BlockPos run = best < 8.0 * 8.0 ? hideout : new BlockPos(contestant.getPos().add(away));
-            if (best < 8.0 * 8.0) {
-                reflex(contestant);
+            // no weapon and a cat close: instinct (flinch, freeze or bolt, away round things, for the haunted house)
+            List<Instinct.Threat> cats = new ArrayList<>();
+            for (Panther beast : pack) {
+                cats.add(Instinct.Threat.chaser(beast, "a cat"));
             }
-            contestant.go(run, 1.35);
-            if (random.nextFloat() < 0.01F) {
-                contestant.speak("A big cat is coming your way and you have no weapon.", Lines.pick(random, "Run!", "It's coming! It's coming!",
-                        "Into the haunted house, quick!"));
+            if (!instinct.react(contestant, cats)) {
+                contestant.go(hideout, 1.1);        // seen one, not on them yet: make for the haunted house
             }
         } else if (contestant.arrived(1.5)) {
             contestant.go(hideout.add(random.nextInt(5) - 2, 0, random.nextInt(5) - 2), 0.9);
@@ -403,5 +407,16 @@ final class BeastHunt extends Game {
         }
         beasts.clear();
         gate(Blocks.AIR.getDefaultState());
+    }
+
+    // --- for your heart -------------------------------------------------------------------------------------------
+
+    @Override
+    protected List<Instinct.Threat> threats() {
+        List<Instinct.Threat> cats = new ArrayList<>();
+        for (Panther beast : alive()) {
+            cats.add(Instinct.Threat.chaser(beast, "a cat"));
+        }
+        return cats;
     }
 }

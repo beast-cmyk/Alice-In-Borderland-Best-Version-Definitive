@@ -295,6 +295,7 @@ final class Survival extends Game {
             if (rifle == 0) {
                 rifle = 70;
                 world.playSound(null, k.getX(), k.getY(), k.getZ(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.HOSTILE, 2.5F, 1.8F);
+                instinct.flinch(k.getPos(), 16.0, 0.25F);
                 Guns.shoot(k, prey, random, 40.0F, 3.0);
             }
             if (d > 70) {
@@ -349,15 +350,15 @@ final class Survival extends Game {
             c.go(k.getPos(), 1.2);
             return;
         }
+        // he has a gun: the instinct (flinch, freeze or run for cover, hide, warn the others) takes over when he's there
+        if (instinct.react(c, java.util.List.of(Instinct.Threat.shooter(k, "the King")))) {
+            return;
+        }
         if (d < 45 && (seen || d < 15)) {
+            // further off and not on them yet: out of his sight, quietly
             Vec3d away = c.getPos().subtract(k.getPos()).multiply(1, 0, 1).normalize().multiply(16);
-            if (seen && d < 25) {
-                reflex(c);
-            }
-            c.go(c.getPos().add(away), 1.35);
-            if (random.nextFloat() < 0.01F) {
-                c.say(Lines.pick(random, "He's here!", "Get down!", "Run!"));
-            }
+            Vec3d cover = seen ? coverFrom(c, k) : null;
+            c.go(cover != null ? cover : c.getPos().add(away), 1.1);
             return;
         }
         if (fighter && d < 20) {
@@ -460,5 +461,13 @@ final class Survival extends Game {
     @Override
     protected Map<String, Place> places(Contestant who) {
         return Map.of("DEPOT", Place.at(depotA.south(1), "the weapons depot (" + (int) Math.sqrt(who.squaredDistanceTo(Vec3d.ofCenter(depotA))) + " m away)"));
+    }
+
+    // --- for your heart -------------------------------------------------------------------------------------------
+
+    @Override
+    protected java.util.List<Instinct.Threat> threats() {
+        Contestant k = king == null ? null : contestant(king);
+        return k == null || !k.isAlive() ? java.util.List.of() : java.util.List.of(Instinct.Threat.shooter(k, "the King"));
     }
 }

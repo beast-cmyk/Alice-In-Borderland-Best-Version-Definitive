@@ -195,6 +195,7 @@ final class BoilingDeath extends Game {
         level = oy;
         next = 5 * 20;
         world.playSound(null, cx, oy, cz, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 6.0F, 0.5F);
+        instinct.flinch(new net.minecraft.util.math.Vec3d(cx + 0.5, oy + 1, cz + 0.5), 48.0, 0.35F);
         world.spawnParticles(ParticleTypes.EXPLOSION_EMITTER, cx + 0.5, oy + 1, cz + 0.5, 3, 4.0, 1.0, 4.0, 0.0);
         world.spawnParticles(ParticleTypes.CLOUD, cx + 0.5, oy + 1, cz + 0.5, 200, 6.0, 1.0, 6.0, 0.15);
         for (Contestant c : strangers()) {
@@ -283,6 +284,7 @@ final class BoilingDeath extends Game {
             return;
         }
         world.playSound(null, x, col[2], z, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 3.0F, 0.7F);
+        instinct.flinch(new net.minecraft.util.math.Vec3d(x + 0.5, col[2], z + 0.5), 14.0, 0.2F);
         world.spawnParticles(ParticleTypes.EXPLOSION, x + 0.5, col[2], z + 0.5, 4, 1.0, 0.5, 1.0, 0.0);
         for (int dx = -1; dx <= 1; dx++) {
             for (int dz = -1; dz <= 1; dz++) {
@@ -427,5 +429,14 @@ final class BoilingDeath extends Game {
                 + "able to see which. The water is " + (above < 0 ? "OVER you: you're being scalded" : above + " blocks below you") + " and rising. "
                 + "The gates: " + gates + ". The nearest is gate " + (nearest + 1) + "."
                 + (going != null ? " You're heading for gate " + (going + 1) + "." : "");
+    }
+
+    // --- for your heart -------------------------------------------------------------------------------------------
+
+    /** The boiling water rising toward you. */
+    @Override
+    protected float hazard(ServerPlayerEntity player) {
+        double above = player.getY() - level;
+        return above >= 6.0 ? 0.0F : (float) Math.min(1.0, 0.35 + 0.65 * (6.0 - Math.max(0.0, above)) / 6.0);
     }
 }

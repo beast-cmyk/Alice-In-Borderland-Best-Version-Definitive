@@ -299,7 +299,7 @@ final class SolitaryConfinement extends Game {
                     continue;
                 }
                 Integer last = askedAt.get(id);
-                if (!belief.containsKey(id) && (last == null || ticks - last > 20 * 25) && random.nextFloat() < 0.01F) {
+                if (!belief.containsKey(id) && (last == null || ticks - last > 20 * 60) && random.nextFloat() < 0.01F) {
                     askedAt.put(id, ticks);
                     asking.put(pid, id);
                     c.look(player);

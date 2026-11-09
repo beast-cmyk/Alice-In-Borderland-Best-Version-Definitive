@@ -231,11 +231,14 @@ final class Champion extends Game {
         boolean fighter = ours || "FIGHT".equals(said) || "FIGHT_JACK".equals(said) || !"HIDE".equals(said) && (c.nerve() > 0.55F || c.getHealth() > 14
                 && c.nature == Contestant.Nature.CLEVER);
         if (!fighter) {
-            if (best < 8 * 8) {
-                Vec3d away = c.getPos().subtract(target.getPos()).normalize().multiply(6.0);
-                reflex(c);
-                c.go(new BlockPos(c.getPos().add(away)), 1.3);
+            // not fighting: instinct (flinch, freeze or bolt, away round things) when one of them comes for them
+            java.util.List<Instinct.Threat> them = new java.util.ArrayList<>();
+            for (LivingEntity other : living()) {
+                if (other != c && theirs(other.getUuid())) {
+                    them.add(Instinct.Threat.chaser(other, other.getUuid().equals(jack) ? "the Jack" : "one of his men"));
+                }
             }
+            instinct.react(c, them);
             return;
         }
         c.look(target);
@@ -321,5 +324,18 @@ final class Champion extends Game {
             }
         }
         return men;
+    }
+
+    // --- for your heart -------------------------------------------------------------------------------------------
+
+    @Override
+    protected java.util.List<Instinct.Threat> threats() {
+        java.util.List<Instinct.Threat> them = new java.util.ArrayList<>();
+        for (LivingEntity other : living()) {
+            if (theirs(other.getUuid())) {
+                them.add(Instinct.Threat.chaser(other, other.getUuid().equals(jack) ? "the Jack" : "one of his men"));
+            }
+        }
+        return them;
     }
 }

@@ -398,10 +398,21 @@ final class Tag extends Game {
 
     private void strangersThink() {
         List<Hunter> list = hunterList();
+        List<Instinct.Threat> threats = threats(list);
         for (Contestant contestant : strangers()) {
             UUID id = contestant.getUuid();
-            // Instinct: what a frightened person does when it's there, before any thinking
-            if (instinct(contestant, list)) {
+            // Instinct: what a frightened person does when it's there, before any thinking. Someone who chose to hide keeps
+            // still while it passes, and someone at a button with the room found holds their ground, unless it's looking
+            // right at them.
+            boolean seen = false;
+            for (Hunter hunter : list) {
+                seen |= hunter.sees(contestant);
+            }
+            boolean holding = instinct.state(id) == null && !seen
+                    && (ticks < hideUntil.getOrDefault(id, 0) || atButton(contestant) && goalKnown);
+            if (!holding && instinct.react(contestant, threats)) {
+                searching.remove(id);
+                hideUntil.remove(id);
                 continue;
             }
             if (goalKnown || contestant.squaredDistanceTo(Vec3d.ofCenter(goal.center)) < 9.0) {
@@ -437,37 +448,9 @@ final class Tag extends Game {
         }
     }
 
-    // --- instinct ---------------------------------------------------------------------------------------------------
-    //
-    // When it's there (it's looking at them, they've caught sight of it close by, or it's shooting at them or someone
-    // beside them) a person doesn't work out the flat furthest from it. They flinch first. Then, by who they are and how
-    // scared they already are: some freeze for a second or two, the calm ones slip quietly out of its sight, the
-    // terrified ones bolt for it; out of its sight is the point, the nearest doorway, the stairwell, a wall between them
-    // and it, not distance. Once they're hidden, they keep still a while, the ones with their wits about them warn the
-    // others where it is, and then they think again (that's the AI's again).
+    // --- instinct (the shared one: see Instinct) -----------------------------------------------------------------
 
-    private enum Fright { STARTLED, FROZEN, TAKING_COVER, HIDING }
-
-    private static final class Panic {
-        Fright state;
-        int until;
-        int since;
-        @Nullable Vec3d cover;
-        double pace;
-        final UUID from;
-        int outOfSight;
-
-        Panic(Fright state, int until, UUID from) {
-            this.state = state;
-            this.until = until;
-            this.from = from;
-        }
-    }
-
-    private final Map<UUID, Panic> panic = new HashMap<>();
-    /** When each stranger was last shot at, or had someone shot right beside them. */
-    private final Map<UUID, Integer> underFire = new HashMap<>();
-    /** When each last screamed or shouted about it (not every second). */
+    /** When each stranger last said something about gunfire they only heard. */
     private final Map<UUID, Integer> criedAt = new HashMap<>();
     /** The floor where each last heard it shooting, and when: they'll keep away from it for a while. */
     private final Map<UUID, int[]> heardShooting = new HashMap<>();
@@ -480,14 +463,23 @@ final class Tag extends Game {
         return e.getX() < cx + 9 ? "west side" : "north side";
     }
 
+    /** The horse masks, as the strangers' instinct knows them: guns, seeing only straight ahead, on a floor and a side. */
+    private List<Instinct.Threat> threats(List<Hunter> list) {
+        List<Instinct.Threat> threats = new ArrayList<>();
+        for (Hunter hunter : list) {
+            threats.add(new Instinct.Threat(hunter, Instinct.Kind.SHOOTER, "it", hunter::sees,
+                    who -> "on floor " + (floorOf(hunter) + 1) + ", " + sideOf(hunter)));
+        }
+        return threats;
+    }
+
     /** It fired at {@code target}: whoever was hit or beside them is under fire; everyone within earshot hears it. */
     private void gunfire(Hunter hunter, LivingEntity target) {
+        instinct.gunfire(target);
         int floor = floorOf(hunter);
         for (Contestant c : strangers()) {
             double d = c.distanceTo(target);
-            if (c == target || d < 5.0) {
-                underFire.put(c.getUuid(), ticks);
-            } else if (c.distanceTo(hunter) < 30.0 && !panic.containsKey(c.getUuid())) {
+            if (c != target && d >= 5.0 && c.distanceTo(hunter) < 30.0 && instinct.state(c.getUuid()) == null) {
                 // heard, not seen: they turn toward it, and they'll keep away from that floor
                 c.notice(hunter.getEyePos(), 40);
                 heardShooting.put(c.getUuid(), new int[]{floor, ticks});
@@ -504,261 +496,10 @@ final class Tag extends Game {
         }
     }
 
-    /** Handles {@code c}'s instinct this tick; true if it's in charge of them (nothing else should move them). */
-    private boolean instinct(Contestant c, List<Hunter> list) {
-        UUID id = c.getUuid();
-        Hunter near = null;
-        double nearest = Double.MAX_VALUE;
-        for (Hunter hunter : list) {
-            double d = hunter.distanceTo(c);
-            if (d < nearest) {
-                nearest = d;
-                near = hunter;
-            }
-        }
-        Panic p = panic.get(id);
-        if (near == null) {
-            panic.remove(id);
-            return false;
-        }
-        boolean itSeesThem = near.sees(c) || nearest < 5.0 && near.canSee(c);
-        boolean theySeeIt = nearest < 16.0 && c.canSee(near) && facing(c, near) > -0.2;
-        boolean shot = ticks - underFire.getOrDefault(id, -100) < 10;
-        boolean triggered = itSeesThem || theySeeIt || shot;
-        // someone who chose to hide keeps still while it passes, unless it's looking right at them
-        if (p == null && ticks < hideUntil.getOrDefault(id, 0) && !itSeesThem && !shot) {
-            if (nearest < 12.0) {
-                c.lookAt(near.getEyePos());
-            }
-            return false;
-        }
-        if (p == null || p.state == Fright.HIDING && (itSeesThem || shot)) {
-            if (!triggered || atButton(c) && goalKnown && !shot) {
-                return p != null && p.state == Fright.HIDING && hiding(c, p, near);
-            }
-            // the flinch: the half second it takes a person to react
-            p = new Panic(Fright.STARTLED, ticks + 5 + random.nextInt(6), near.getUuid());
-            p.since = ticks;
-            panic.put(id, p);
-            searching.remove(id);
-            hideUntil.remove(id);
-            c.stopAll();
-            c.startle(near.getEyePos());
-            c.feelings.scared(c, shot ? 0.3F : 0.2F);
-            cry(c, near, shot);
-            reflex(c);
-            return true;
-        }
-        reflex(c);
-        switch (p.state) {
-            case STARTLED -> {
-                if (ticks < p.until) {
-                    return true;
-                }
-                // then: freeze, or get out of its sight, fast or quietly, by who they are and how scared they are
-                float freeze = 0.06F + 0.3F * c.feelings.fear + (c.nature == Contestant.Nature.TIMID ? 0.15F : 0.0F)
-                        - (c.nature == Contestant.Nature.BRAVE || c.nature == Contestant.Nature.RECKLESS ? 0.05F : 0.0F);
-                if (random.nextFloat() < freeze && !shot) {
-                    p.state = Fright.FROZEN;
-                    p.until = ticks + 15 + random.nextInt(30);
-                    c.hold();
-                    c.lookAt(near.getEyePos());
-                    return true;
-                }
-                takeCover(c, p, near);
-                return true;
-            }
-            case FROZEN -> {
-                c.lookAt(near.getEyePos());
-                if (ticks >= p.until || shot || nearest < 3.0) {
-                    takeCover(c, p, near);
-                }
-                return true;
-            }
-            case TAKING_COVER -> {
-                boolean outOfSight = !near.canSee(c);
-                p.outOfSight = outOfSight ? p.outOfSight + 1 : 0;
-                boolean there = p.cover != null && c.squaredDistanceTo(p.cover) < 1.2 * 1.2;
-                if (there || p.outOfSight >= 15 && nearest > 6.0 || ticks - p.since > 20 * 9) {
-                    hide(c, p, near);
-                } else if (p.cover != null && near.canSee(c) && near.sees(c) && ticks - p.since > 40 && c.getNavigation().isIdle() && !there) {
-                    takeCover(c, p, near);      // that way's no good (it's still on them and they're getting nowhere): somewhere else
-                }
-                return true;
-            }
-            case HIDING -> {
-                return hiding(c, p, near);
-            }
-        }
-        return false;
-    }
-
-    /** How much {@code c} is facing {@code at} (1 straight at it, -1 away): people catch movement out of the corner of an eye. */
-    private static double facing(LivingEntity c, LivingEntity at) {
-        Vec3d to = at.getPos().subtract(c.getPos()).multiply(1.0, 0.0, 1.0);
-        if (to.lengthSquared() < 0.01) {
-            return 1.0;
-        }
-        double yaw = Math.toRadians(c.getHeadYaw());
-        return to.normalize().dotProduct(new Vec3d(-Math.sin(yaw), 0.0, Math.cos(yaw)));
-    }
-
-    private void cry(Contestant c, Hunter near, boolean shot) {
-        if (ticks - criedAt.getOrDefault(c.getUuid(), -400) < 120) {
-            return;
-        }
-        criedAt.put(c.getUuid(), ticks);
-        String line = switch (c.nature) {
-            case TIMID -> Lines.pick(random, "No, no, no...", "It's here... oh god, it's here.", "Help!");
-            case BRAVE -> Lines.pick(random, "It's here! Get inside!", "Horse mask! Off the walkway!", "Down! Get down!");
-            case KIND -> Lines.pick(random, "It's here! Everyone, get inside!", "Run! Get out of sight!", "Watch out, it's here!");
-            case CLEVER -> Lines.pick(random, "Horse mask. Out of its line of sight, now.", "It's here. Get behind a wall.", "Into a flat. Quietly.");
-            case SELFISH -> Lines.pick(random, "Get out of my way!", "It's here!", "Move!");
-            case RECKLESS -> Lines.pick(random, "It's here! Run!", "Go, go, go!", "Run!");
-        };
-        c.say(shot ? Lines.pick(random, "It's shooting! ", "Gun! ", "") + line : line);
-    }
-
-    /** Off to the nearest place it can't see: quietly if they've kept their head, flat out if they haven't. */
-    private void takeCover(Contestant c, Panic p, Hunter near) {
-        boolean calm = c.feelings.fear < 0.55F && (c.nature == Contestant.Nature.CLEVER || c.nature == Contestant.Nature.BRAVE
-                || c.nature == Contestant.Nature.KIND && random.nextBoolean());
-        p.pace = calm ? 1.1 : 1.4;
-        p.cover = cover(c, near);
-        p.state = Fright.TAKING_COVER;
-        p.since = ticks;
-        p.outOfSight = 0;
-        if (p.cover == null) {
-            // nowhere out of its sight within reach: then away from it
-            p.cover = Vec3d.ofBottomCenter(farthestFlat(c, near).center);
-            p.pace = 1.4;
-        }
-        c.go(p.cover, p.pace);
-    }
-
-    /**
-     * The nearest place to stand that {@code hunter} can't see from where it is, that {@code c} can get to without
-     * running at it: a doorway, a flat, the stairwell, the far side of a wall.
-     */
-    @Nullable
-    private Vec3d cover(Contestant c, Hunter hunter) {
-        // properly out of sight first: round a corner from where they stand, and still hidden when it's taken a few
-        // steps their way; a doorway it'll see into as it passes only if there's nothing better
-        Vec3d found = cover(c, hunter, true);
-        return found != null ? found : cover(c, hunter, false);
-    }
-
-    @Nullable
-    private Vec3d cover(Contestant c, Hunter hunter, boolean properly) {
-        Vec3d eye = hunter.getEyePos();
-        Vec3d mine = c.getEyePos();
-        Vec3d coming = mine.subtract(eye).multiply(1.0, 0.0, 1.0);
-        double gap = coming.length();
-        Vec3d closer = gap < 0.01 ? eye : eye.add(coming.multiply(Math.min(3.0, gap / 2.0) / gap));
-        Vec3d here = c.getPos();
-        Vec3d toIt = hunter.getPos().subtract(here).multiply(1.0, 0.0, 1.0);
-        toIt = toIt.lengthSquared() < 0.01 ? Vec3d.ZERO : toIt.normalize();
-        BlockPos at = c.getBlockPos();
-        List<BlockPos> spots = new ArrayList<>();
-        List<Double> scores = new ArrayList<>();
-        for (int dy = -1; dy <= 1; dy++) {
-            for (int dx = -9; dx <= 9; dx++) {
-                for (int dz = -9; dz <= 9; dz++) {
-                    if (dx * dx + dz * dz > 81) {
-                        continue;
-                    }
-                    BlockPos feet = at.add(dx, dy, dz);
-                    Vec3d spot = Vec3d.ofBottomCenter(feet);
-                    if (!bounds.contains(spot) || mined(spot) || !standable(feet)) {
-                        continue;
-                    }
-                    if (seenFrom(eye, spot.add(0.0, 1.5, 0.0), hunter) || seenFrom(eye, spot.add(0.0, 0.6, 0.0), hunter)) {
-                        continue;
-                    }
-                    if (properly && (seenFrom(closer, spot.add(0.0, 1.5, 0.0), hunter) || seenFrom(mine, spot.add(0.0, 1.5, 0.0), hunter))) {
-                        continue;
-                    }
-                    Vec3d way = spot.subtract(here).multiply(1.0, 0.0, 1.0);
-                    double d = way.length();
-                    double toward = d < 0.01 ? 0.0 : way.multiply(1.0 / d).dotProduct(toIt);
-                    double score = d + (toward > 0.2 ? 14.0 * toward : 0.0) - 0.2 * spot.distanceTo(hunter.getPos()) + Math.abs(dy) * 2.0;
-                    int i = 0;
-                    while (i < scores.size() && scores.get(i) <= score) {
-                        i++;
-                    }
-                    if (i < 8) {
-                        spots.add(i, feet);
-                        scores.add(i, score);
-                        if (spots.size() > 8) {
-                            spots.remove(8);
-                            scores.remove(8);
-                        }
-                    }
-                }
-            }
-        }
-        // the way there counts, not just how far it is as the crow flies (a wall between you is no use if the door's
-        // the other end of the gallery)
-        BlockPos best = null;
-        double bestCost = Double.MAX_VALUE;
-        for (int i = 0; i < spots.size(); i++) {
-            net.minecraft.entity.ai.pathing.Path path = c.getNavigation().findPathTo(spots.get(i), 0);
-            if (path == null || !path.reachesTarget()) {
-                continue;
-            }
-            double cost = path.getLength() + scores.get(i) - Math.sqrt(c.getBlockPos().getSquaredDistance(spots.get(i)));
-            if (cost < bestCost) {
-                bestCost = cost;
-                best = spots.get(i);
-            }
-        }
-        return best == null ? null : Vec3d.ofBottomCenter(best);
-    }
-
-    private boolean seenFrom(Vec3d eye, Vec3d point, Hunter hunter) {
-        return world.raycast(new net.minecraft.world.RaycastContext(eye, point, net.minecraft.world.RaycastContext.ShapeType.COLLIDER,
-                net.minecraft.world.RaycastContext.FluidHandling.NONE, hunter)).getType() == net.minecraft.util.hit.HitResult.Type.MISS;
-    }
-
-    private boolean standable(BlockPos feet) {
-        return world.getBlockState(feet).getCollisionShape(world, feet).isEmpty()
-                && world.getBlockState(feet.up()).getCollisionShape(world, feet.up()).isEmpty()
-                && !world.getBlockState(feet.down()).getCollisionShape(world, feet.down()).isEmpty();
-    }
-
-    /** The courtyard: a step on it is a mine. */
-    private boolean mined(Vec3d at) {
-        return at.x > cx + 9.0 && at.z > cz - 35.0 && at.y < origin.getY() + 1.0;
-    }
-
-    /** Out of its sight: keep still a while, warn the others where it is, then think again. */
-    private void hide(Contestant c, Panic p, Hunter near) {
-        p.state = Fright.HIDING;
-        p.until = ticks + 20 * (6 + random.nextInt(8)) + (int) (c.feelings.fear * 20 * 10);
-        c.hold();
-        c.lookAt(near.getEyePos());
-        String where = "floor " + (floorOf(near) + 1) + ", " + sideOf(near);
-        c.remember("You ran from the thing in the horse mask and hid. It was on " + where + ".");
-        boolean warns = c.nature != Contestant.Nature.SELFISH && (c.nature != Contestant.Nature.TIMID || random.nextBoolean());
-        if (warns && ticks - criedAt.getOrDefault(c.getUuid(), -400) > 60) {
-            criedAt.put(c.getUuid(), ticks);
-            c.say(Lines.pick(random, "It's on " + where + "!", "Horse mask, " + where + ". Stay away from there.",
-                    "It's on " + where + ". Keep your heads down."));
-        }
-        note(c.name() + " is hiding from the thing in the horse mask. It was last seen on " + where + ".", false);
-    }
-
-    /** Hidden: holding still, watching the door. Seen again, or the wait's over. */
-    private boolean hiding(Contestant c, Panic p, Hunter near) {
-        if (ticks >= p.until) {
-            panic.remove(c.getUuid());
-            c.stopAll();
-            return false;       // they think again (the AI picks what to do next)
-        }
-        if (near.distanceTo(c) < 14.0) {
-            c.lookAt(near.getEyePos());
-        }
-        return true;
+    /** The courtyard: a step on it is a mine. Nobody's route goes across it. */
+    @Override
+    protected boolean deadly(int x, int y, int z) {
+        return x >= cx + 9 && z >= cz - 35 && y <= origin.getY();
     }
 
     private void announceFind(Contestant finder) {
@@ -1022,9 +763,9 @@ final class Tag extends Game {
                         .append(hf).append(hunter.canSee(who) ? ", and it's looking right at you!" : ".");
             }
         }
-        Panic fright = panic.get(who.getUuid());
-        if (fright != null && fright.state == Fright.HIDING) {
-            text.append(" You've just run from it and you're hiding, keeping still.");
+        String fright = instinct.describe(who.getUuid());
+        if (fright != null) {
+            text.append(' ').append(fright);
         }
         int[] heard = heardShooting.get(who.getUuid());
         if (heard != null && ticks - heard[1] < 20 * 60) {
@@ -1041,7 +782,7 @@ final class Tag extends Game {
     @Override
     protected void died(UUID id) {
         searching.remove(id);
-        panic.remove(id);
+        instinct.forget(id);
         for (Contestant contestant : strangers()) {
             if (contestant.quiet() && random.nextFloat() < 0.3F) {
                 contestant.speak(nameOf(id) + " was just killed by the thing in the horse mask.",
@@ -1049,5 +790,12 @@ final class Tag extends Game {
                 break;
             }
         }
+    }
+
+    // --- for your heart -------------------------------------------------------------------------------------------
+
+    @Override
+    protected List<Instinct.Threat> threats() {
+        return threats(hunterList());
     }
 }

@@ -249,6 +249,7 @@ final class ThreeSwitches extends Game {
     private void electrocute(UUID id, LivingEntity entity, String why) {
         world.spawnParticles(ParticleTypes.ELECTRIC_SPARK, entity.getX(), entity.getY() + 1.0, entity.getZ(), 40, 0.4, 0.8, 0.4, 0.2);
         world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, SoundCategory.HOSTILE, 1.2F, 1.6F);
+        instinct.flinch(entity.getPos(), 14.0, 0.3F);
         fail(id, why);
     }
 
@@ -567,5 +568,13 @@ final class ThreeSwitches extends Game {
                 return;
             }
         }
+    }
+
+    // --- for your heart -------------------------------------------------------------------------------------------
+
+    /** The water climbing toward the transformer. */
+    @Override
+    protected float hazard(ServerPlayerEntity player) {
+        return level < 2 ? 0.0F : Math.min(1.0F, 0.3F + 0.18F * (level - 2));
     }
 }

@@ -321,6 +321,9 @@ public abstract class Game {
         }
         phaseTicks++;
         voiceTick();
+        if (phase == Phase.OPEN || phase == Phase.BRIEFING || phase == Phase.RUNNING) {
+            atmosphere().tick(phase == Phase.RUNNING);
+        }
         if (phase != Phase.BUILDING && phaseTicks % 10 == 0) {
             updateScreens();
         }
@@ -349,6 +352,7 @@ public abstract class Game {
                     phase(Phase.RUNNING);
                     timeLeft = timeLimit();
                     begin();
+                    atmosphere().start();
                 }
             }
             case RUNNING -> {
@@ -718,6 +722,9 @@ public abstract class Game {
             LivingEntity entity = entity(id);
             if (entity == null || !entity.isAlive()) {
                 seats.put(id, Fate.DEAD);
+                if (entity != null) {
+                    atmosphere().death(entity.getPos());
+                }
                 died(id);
             } else if (check) {
                 // nobody is left to suffocate in a wall: twice in a row in one (a moment apart), and they're moved out
@@ -852,6 +859,189 @@ public abstract class Game {
         int cleared = (int) seats.values().stream().filter(f -> f == Fate.CLEARED).count();
         announce(cleared == 0 ? "The game is over. There are no survivors." : "The game is over. Survivors: " + cleared + ".");
         ended();
+    }
+
+    // --- where the strangers mustn't go, and where to hide ----------------------------------------------------------
+
+    /** The strangers' instinct, when something's hunting them (see Instinct). */
+    protected final Instinct instinct = new Instinct(this);
+
+    /** What the venue sounds like, and the player's heart (see Atmosphere). Made when first needed. */
+    @Nullable
+    private Atmosphere atmosphere;
+
+    private Atmosphere atmosphere() {
+        if (atmosphere == null) {
+            atmosphere = new Atmosphere(this);
+        }
+        return atmosphere;
+    }
+
+    /** What's hunting people in this game right now (for the strangers' instinct, and your heart). */
+    protected List<Instinct.Threat> threats() {
+        return List.of();
+    }
+
+    /** How much danger {@code player} is in from the game itself (their grip going, the water rising...), 0 to 1. */
+    protected float hazard(ServerPlayerEntity player) {
+        return 0.0F;
+    }
+
+    /**
+     * How much danger {@code player} is in right now, 0 to 1: something hunting them near (more if it's seen them), the
+     * clock nearly out, whatever the game itself does to them. It sets their heartbeat.
+     */
+    final float danger(ServerPlayerEntity player) {
+        float danger = hazard(player);
+        int limit = timeLimit();
+        if (limit > 0 && timeLeft > 0 && timeLeft < 20 * 60) {
+            danger = Math.max(danger, 0.35F + 0.55F * (1.0F - timeLeft / (20.0F * 60.0F)));
+        }
+        for (Instinct.Threat threat : threats()) {
+            LivingEntity it = threat.who();
+            if (it == null || !it.isAlive()) {
+                continue;
+            }
+            double d = it.distanceTo(player);
+            float level = threat.canSee(player) ? (float) Math.max(0.75, 1.0 - d / 40.0) : (float) Math.max(0.0, 0.75 - d / 24.0);
+            danger = Math.max(danger, level);
+        }
+        return Math.min(1.0F, danger);
+    }
+
+    /** A place in this venue where the hunted are safer (a hideout): those running from something make for it. */
+    protected boolean refuge(Vec3d at) {
+        return false;
+    }
+
+    /** Ground in this venue that kills whoever steps on it (a minefield). The strangers' routes go round it. */
+    protected boolean deadly(int x, int y, int z) {
+        return false;
+    }
+
+    /**
+     * Whether a stranger playing this game must not step into block {@code x, y, z} now: out of the venue while it's on
+     * (the laser), or deadly ground. Their pathfinder treats it as a wall.
+     */
+    public final boolean forbidden(int x, int y, int z) {
+        if (phase != Phase.RUNNING || bounds == null) {
+            return false;
+        }
+        return !bounds.contract(0.6).contains(x + 0.5, y + 0.5, z + 0.5) || deadly(x, y, z);
+    }
+
+    private record Cover(UUID from, @Nullable Vec3d spot, long until) {
+    }
+
+    private final Map<UUID, Cover> covers = new HashMap<>();
+
+    /**
+     * Where {@code c} runs to get out of {@code threat}'s sight (someone with a gun): worked out once and kept a few
+     * seconds, while it stays hidden from it. Null: nowhere near enough.
+     */
+    @Nullable
+    protected final Vec3d coverFrom(Contestant c, LivingEntity threat) {
+        long now = world.getTime();
+        Cover known = covers.get(c.getUuid());
+        if (known != null && now < known.until() && known.from().equals(threat.getUuid())
+                && (known.spot() == null || !seenFrom(threat.getEyePos(), known.spot().add(0.0, 1.5, 0.0), threat))) {
+            return known.spot();
+        }
+        Vec3d spot = findCover(c, threat);
+        covers.put(c.getUuid(), new Cover(threat.getUuid(), spot, now + 60));
+        return spot;
+    }
+
+    /**
+     * The nearest place to stand that {@code threat} can't see, that {@code c} can get to without running at it: a
+     * doorway, a room, a stairwell, the far side of a wall. Properly out of sight first (round a corner from where they
+     * stand, and still hidden when it's taken a few steps their way); somewhere it'll only see as it passes if there's
+     * nothing better.
+     */
+    @Nullable
+    protected final Vec3d findCover(Contestant c, LivingEntity threat) {
+        Vec3d found = findCover(c, threat, true);
+        return found != null ? found : findCover(c, threat, false);
+    }
+
+    @Nullable
+    private Vec3d findCover(Contestant c, LivingEntity threat, boolean properly) {
+        Vec3d eye = threat.getEyePos();
+        Vec3d mine = c.getEyePos();
+        Vec3d coming = mine.subtract(eye).multiply(1.0, 0.0, 1.0);
+        double gap = coming.length();
+        Vec3d closer = gap < 0.01 ? eye : eye.add(coming.multiply(Math.min(3.0, gap / 2.0) / gap));
+        Vec3d here = c.getPos();
+        Vec3d toIt = threat.getPos().subtract(here).multiply(1.0, 0.0, 1.0);
+        toIt = toIt.lengthSquared() < 0.01 ? Vec3d.ZERO : toIt.normalize();
+        BlockPos at = c.getBlockPos();
+        List<BlockPos> spots = new ArrayList<>();
+        List<Double> scores = new ArrayList<>();
+        for (int dy = -1; dy <= 1; dy++) {
+            for (int dx = -9; dx <= 9; dx++) {
+                for (int dz = -9; dz <= 9; dz++) {
+                    if (dx * dx + dz * dz > 81) {
+                        continue;
+                    }
+                    BlockPos feet = at.add(dx, dy, dz);
+                    Vec3d spot = Vec3d.ofBottomCenter(feet);
+                    if (bounds != null && !bounds.contract(1.0).contains(spot) || deadly(feet.getX(), feet.getY(), feet.getZ()) || !canStand(feet)) {
+                        continue;
+                    }
+                    if (seenFrom(eye, spot.add(0.0, 1.5, 0.0), threat) || seenFrom(eye, spot.add(0.0, 0.6, 0.0), threat)) {
+                        continue;
+                    }
+                    if (properly && (seenFrom(closer, spot.add(0.0, 1.5, 0.0), threat) || seenFrom(mine, spot.add(0.0, 1.5, 0.0), threat))) {
+                        continue;
+                    }
+                    Vec3d way = spot.subtract(here).multiply(1.0, 0.0, 1.0);
+                    double d = way.length();
+                    double toward = d < 0.01 ? 0.0 : way.multiply(1.0 / d).dotProduct(toIt);
+                    double score = d + (toward > 0.2 ? 14.0 * toward : 0.0) - 0.2 * spot.distanceTo(threat.getPos()) + Math.abs(dy) * 2.0;
+                    int i = 0;
+                    while (i < scores.size() && scores.get(i) <= score) {
+                        i++;
+                    }
+                    if (i < 8) {
+                        spots.add(i, feet);
+                        scores.add(i, score);
+                        if (spots.size() > 8) {
+                            spots.remove(8);
+                            scores.remove(8);
+                        }
+                    }
+                }
+            }
+        }
+        // the way there counts, not just how far it is as the crow flies (a wall between you is no use if the door's at
+        // the far end)
+        BlockPos best = null;
+        double bestCost = Double.MAX_VALUE;
+        for (int i = 0; i < spots.size(); i++) {
+            net.minecraft.entity.ai.pathing.Path path = c.getNavigation().findPathTo(spots.get(i), 0);
+            if (path == null || !path.reachesTarget()) {
+                continue;
+            }
+            double cost = path.getLength() + scores.get(i) - Math.sqrt(c.getBlockPos().getSquaredDistance(spots.get(i)));
+            if (cost < bestCost) {
+                bestCost = cost;
+                best = spots.get(i);
+            }
+        }
+        return best == null ? null : Vec3d.ofBottomCenter(best);
+    }
+
+    /** Nothing in the way between {@code eye} and {@code point}, as {@code looker} sees it. */
+    protected final boolean seenFrom(Vec3d eye, Vec3d point, LivingEntity looker) {
+        return world.raycast(new net.minecraft.world.RaycastContext(eye, point, net.minecraft.world.RaycastContext.ShapeType.COLLIDER,
+                net.minecraft.world.RaycastContext.FluidHandling.NONE, looker)).getType() == net.minecraft.util.hit.HitResult.Type.MISS;
+    }
+
+    /** Room to stand: nothing solid at the feet or head, something solid underfoot. */
+    protected final boolean canStand(BlockPos feet) {
+        return world.getBlockState(feet).getCollisionShape(world, feet).isEmpty()
+                && world.getBlockState(feet.up()).getCollisionShape(world, feet.up()).isEmpty()
+                && !world.getBlockState(feet.down()).getCollisionShape(world, feet.down()).isEmpty();
     }
 
     // --- afterwards: nobody is ever shut in a venue once it's over ------------------------------------------------
@@ -1092,6 +1282,9 @@ public abstract class Game {
         }
         seats.put(id, Fate.DEAD);
         LivingEntity entity = entity(id);
+        if (entity != null) {
+            atmosphere().death(entity.getPos());
+        }
         if (entity != null && entity.isAlive()) {
             Laser.strike(entity, why);
         }

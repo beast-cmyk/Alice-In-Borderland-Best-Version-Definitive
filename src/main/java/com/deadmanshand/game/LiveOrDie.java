@@ -737,6 +737,7 @@ final class LiveOrDie extends Game {
         }
         if (since == 60) {
             world.playSound(null, c.x, origin.getY() + 2, c.z, SoundEvents.ITEM_FIRECHARGE_USE, SoundCategory.BLOCKS, 2.0F, 0.6F);
+            instinct.flinch(new Vec3d(c.x, origin.getY() + 1.0, c.z), 12.0, 0.25F);
             for (int x = room.xMin(); x <= room.xMax(); x++) {
                 for (int z = room.zMin(); z <= room.zMax(); z++) {
                     BlockPos at = new BlockPos(x, origin.getY(), z);
@@ -926,5 +927,19 @@ final class LiveOrDie extends Game {
             default -> {
             }
         }
+    }
+
+    // --- for your heart -------------------------------------------------------------------------------------------
+
+    /** The room's clock running out on you. */
+    @Override
+    protected float hazard(ServerPlayerEntity player) {
+        for (Room room : rooms) {
+            if (room.endsAt > 0 && room.box().contains(player.getPos())) {
+                double seconds = (room.endsAt - ticks) / 20.0;
+                return seconds >= 25.0 ? 0.0F : (float) Math.min(1.0, 0.35 + 0.6 * (1.0 - Math.max(0.0, seconds) / 25.0));
+            }
+        }
+        return 0.0F;
     }
 }

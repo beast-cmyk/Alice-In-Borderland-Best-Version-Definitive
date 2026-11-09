@@ -454,4 +454,13 @@ final class BalanceScale extends Game {
         }
         return s.toString();
     }
+
+    // --- for your heart -------------------------------------------------------------------------------------------
+
+    /** Your score nearing minus ten. */
+    @Override
+    protected float hazard(ServerPlayerEntity player) {
+        int s = score.getOrDefault(player.getUuid(), 0);
+        return s > -5 ? 0.0F : Math.min(1.0F, 0.35F + 0.16F * (-5 - s));
+    }
 }

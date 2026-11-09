@@ -500,7 +500,7 @@ final class Silent extends Game {
         if (!minds() && fear < 9 && (c.nature == Contestant.Nature.TIMID || c.feelings.fear > 0.7F) && random.nextFloat() < 0.6F) {
             // frozen with fear, which is quiet, at least
             c.hold();
-            if (random.nextFloat() < 0.01F) {
+            if (c.quiet() && random.nextFloat() < 0.003F) {
                 c.say(Lines.pick(random, "No, no, no...", "What is that?", "Please..."));
             }
             return;
@@ -658,5 +658,17 @@ final class Silent extends Game {
         String ns = dz < -2 ? "north" : dz > 2 ? "south" : "";
         String ew = dx > 2 ? "east" : dx < -2 ? "west" : "";
         return ns.isEmpty() && ew.isEmpty() ? "right beside" : ns + (ns.isEmpty() || ew.isEmpty() ? "" : "-") + ew;
+    }
+
+    // --- for your heart -------------------------------------------------------------------------------------------
+
+    /** It, somewhere in the dark: the closer, the worse. */
+    @Override
+    protected float hazard(net.minecraft.server.network.ServerPlayerEntity player) {
+        if (beast == null) {
+            return 0.0F;
+        }
+        double d = player.getPos().distanceTo(beast);
+        return (float) Math.max(0.0, Math.min(1.0, 1.15 - d / 22.0));
     }
 }

@@ -431,4 +431,13 @@ final class HumanElevator extends Game {
             }
         }
     }
+
+    // --- for your heart -------------------------------------------------------------------------------------------
+
+    /** Your grip going. */
+    @Override
+    protected float hazard(ServerPlayerEntity player) {
+        float g = grip.getOrDefault(player.getUuid(), 100.0F);
+        return g >= 50.0F ? 0.0F : 0.3F + 0.7F * (50.0F - g) / 50.0F;
+    }
 }

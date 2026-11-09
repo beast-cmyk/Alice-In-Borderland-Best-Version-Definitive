@@ -272,9 +272,21 @@ final class WitchHunt extends Game {
                     }
                 }
                 if (danger != null && !c.role.equals("leader")) {
-                    Vec3d away = c.getPos().subtract(danger.getPos()).normalize().multiply(9.0);
-                    c.go(new BlockPos(c.getPos().add(away)), 1.35);
-                    if (random.nextFloat() < 0.004F) {
+                    // the guards are shooting: instinct (flinch, freeze or run for cover, hide, warn the others)
+                    List<Instinct.Threat> guns = new ArrayList<>();
+                    for (Contestant g : strangers()) {
+                        if (g.role.equals("guard")) {
+                            guns.add(Instinct.Threat.shooter(g, "the guard"));
+                        }
+                    }
+                    if (instinct.react(c, guns)) {
+                        continue;
+                    }
+                    Vec3d cover = coverFrom(c, danger);
+                    if (cover != null) {
+                        c.go(cover, 1.1);       // not on them yet: out of their sight, quietly
+                    }
+                    if (c.quiet() && random.nextFloat() < 0.003F) {
                         c.speak("The guard is shooting people and throwing them on the bonfire.", Lines.pick(random, "They're killing everyone!",
                                 "Hide! Upstairs!", "This is insane, it's not the witch, it's us!"));
                     }
@@ -460,5 +472,21 @@ final class WitchHunt extends Game {
             visa.campFallen = true;
             visa.markDirty();
         }
+    }
+
+    // --- for your heart -------------------------------------------------------------------------------------------
+
+    @Override
+    protected List<Instinct.Threat> threats() {
+        if (ticks < purgeAt) {
+            return List.of();
+        }
+        List<Instinct.Threat> guns = new ArrayList<>();
+        for (Contestant g : strangers()) {
+            if (g.role.equals("guard")) {
+                guns.add(Instinct.Threat.shooter(g, "the guard"));
+            }
+        }
+        return guns;
     }
 }

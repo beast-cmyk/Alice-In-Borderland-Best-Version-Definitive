@@ -276,6 +276,7 @@ final class Osmosis extends Game {
                 tell(e, "You've already battled " + nameOf(e == a ? ib : ia) + ". Both bracelets shock.", Formatting.RED);
             }
             world.playSound(null, a.getX(), a.getY(), a.getZ(), SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, SoundCategory.PLAYERS, 0.5F, 2.0F);
+            instinct.flinch(a.getPos(), 6.0, 0.1F);
             return;
         }
         long pa = pool(a);

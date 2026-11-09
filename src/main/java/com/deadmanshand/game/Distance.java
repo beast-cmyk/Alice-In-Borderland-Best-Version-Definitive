@@ -300,6 +300,7 @@ final class Distance extends Game {
             front = endZ;
             announce("Water is pouring into the tunnel.");
             world.playSound(null, ox, ty + 2, endZ + 2, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 4.0F, 0.6F);
+            instinct.flinch(new net.minecraft.util.math.Vec3d(ox, ty + 2, endZ + 2), 32.0, 0.25F);
         }
         double stop = startZ - 40;
         double next = Math.min(stop, front + 0.32);

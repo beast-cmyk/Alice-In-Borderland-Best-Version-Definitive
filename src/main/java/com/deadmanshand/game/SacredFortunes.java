@@ -309,6 +309,8 @@ final class SacredFortunes extends Game {
         fall = Math.max(1, arrows / 60);
         announce(off + (off == 1 ? " arrow." : " arrows. Take cover!"));
         world.playSound(null, origin.getX(), oy + 10, origin.getZ() - 20, SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.HOSTILE, 3.0F, 0.5F);
+        // the sky fills with fire: everyone in the courtyard flinches
+        instinct.flinch(new net.minecraft.util.math.Vec3d((cx0 + cx1) / 2.0, oy + 1, (cz0 + cz1) / 2.0), 40.0, 0.2F);
     }
 
     @Override

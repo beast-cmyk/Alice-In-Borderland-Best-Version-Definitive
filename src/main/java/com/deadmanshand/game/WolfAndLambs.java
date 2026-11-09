@@ -57,6 +57,17 @@ final class WolfAndLambs extends Game {
     /** Strangers who've decided they won't take your place. */
     private final Set<UUID> sparing = new HashSet<>();
     private final Map<UUID, BlockPos> target = new HashMap<>();
+    /**
+     * Who each stranger has looked in the eye with nothing happening: a lamb, like them (true until the wolf changes
+     * hands). People don't keep staring at someone they've already ruled out.
+     */
+    private final Map<UUID, Set<UUID>> ruledOut = new HashMap<>();
+    /** How long each stranger has been looking someone in the eye ("them|other" -> ticks). */
+    private final Map<String, Integer> lambContact = new HashMap<>();
+    /** How long each stranger has been trying to catch someone's eyes who won't look back ("them|other" -> ticks). */
+    private final Map<String, Integer> avoided = new HashMap<>();
+    /** When each stranger last pleaded with someone to look at them. */
+    private final Map<UUID, Integer> pleadedAt = new HashMap<>();
 
     WolfAndLambs(Kind kind, ServerWorld world, BlockPos origin) {
         super(kind, world, origin);
@@ -337,6 +348,11 @@ final class WolfAndLambs extends Game {
     private void swap(LivingEntity oldWolf, LivingEntity lamb) {
         wolf = lamb.getUuid();
         lastSwap = ticks;
+        // the wolf has moved: anyone ruled out before could be it now (only the two who swapped know who it is)
+        ruledOut.clear();
+        lambContact.clear();
+        avoided.clear();
+        ruledOut.computeIfAbsent(oldWolf.getUuid(), k -> new HashSet<>());
         announce("The wolf has changed.");
         world.playSound(null, lamb.getX(), lamb.getY(), lamb.getZ(), SoundEvents.ENTITY_WOLF_HOWL, SoundCategory.HOSTILE, 1.2F, 0.9F);
         tellRoles();
@@ -408,9 +424,39 @@ final class WolfAndLambs extends Game {
                 }
                 continue;
             }
-            // A lamb: find the wolf's eyes, unless it has chosen to spare them
+            // A lamb: find the wolf's eyes, unless it has chosen to spare them. Whoever they've already looked in the eye
+            // with nothing happening is a lamb too: they're left alone, and the search goes on for the ones who haven't been.
+            Set<UUID> out = ruledOut.computeIfAbsent(id, k -> new HashSet<>());
             UUID suspected = suspect.get(id);
-            LivingEntity mark = suspected != null && !suspected.equals(id) ? entity(suspected) : nearest;
+            if (suspected != null && out.contains(suspected)) {
+                suspect.remove(id);
+                suspected = null;
+            }
+            LivingEntity unknown = null;
+            double unknownDistance = Double.MAX_VALUE;
+            for (LivingEntity other : everyone) {
+                if (other == contestant || out.contains(other.getUuid())) {
+                    continue;
+                }
+                double d = contestant.squaredDistanceTo(other);
+                if (d < unknownDistance && contestant.canSee(other)) {
+                    unknown = other;
+                    unknownDistance = d;
+                }
+            }
+            LivingEntity mark = suspected != null && !suspected.equals(id) ? entity(suspected) : unknown;
+            for (LivingEntity other : everyone) {
+                if (other != contestant && !out.contains(other.getUuid())) {
+                    String key = id + "|" + other.getUuid();
+                    if (eyeContact(contestant, other) && !other.getUuid().equals(wolf)) {
+                        if (lambContact.merge(key, 1, Integer::sum) >= 12) {
+                            ruleOut(contestant, other);
+                        }
+                    } else {
+                        lambContact.remove(key);
+                    }
+                }
+            }
             if (mark != null && sparing.contains(id) && mark.getUuid().equals(suspected)) {
                 Vec3d away = contestant.getPos().subtract(mark.getPos()).normalize().multiply(10.0);
                 contestant.lookAt(contestant.getEyePos().add(away));
@@ -426,9 +472,30 @@ final class WolfAndLambs extends Game {
                 } else {
                     contestant.hold();
                 }
-                if (contestant.quiet() && random.nextFloat() < 0.01F) {
-                    contestant.speak("You're trying to catch " + nameOf(mark.getUuid()) + "'s eyes, in case they're the wolf.",
-                            Lines.pick(random, "Look at me. Just look at me.", "Are you the wolf? Look me in the eye.", "Why won't you look at me?"));
+                // looking away from them, close by: that's what the wolf would do
+                String key = id + "|" + mark.getUuid();
+                boolean dodging = contestant.squaredDistanceTo(mark) < 9.0 * 9.0
+                        && Puppet.gaze(mark).dotProduct(contestant.getEyePos().subtract(mark.getEyePos()).normalize()) < 0.5;
+                int dodged = dodging ? avoided.merge(key, 1, Integer::sum) : 0;
+                if (!dodging) {
+                    avoided.remove(key);
+                }
+                if (dodged > 20 * 6 && contestant.quiet() && ticks - pleadedAt.getOrDefault(id, -10000) > 20 * 45) {
+                    pleadedAt.put(id, ticks);
+                    avoided.remove(key);
+                    String name = nameOf(mark.getUuid());
+                    String line = switch (contestant.nature) {
+                        case TIMID -> Lines.pick(random, "Please... just look at me for a second.", name + "? Why won't you look at me?");
+                        case BRAVE -> Lines.pick(random, name + ", look at me. If you're a lamb you've got nothing to lose.", "Look me in the eye, " + name + ".");
+                        case KIND -> Lines.pick(random, name + ", I'm not trying to hurt you. Just look at me.", "If it's you, " + name + ", I understand. But I need to know.");
+                        case CLEVER -> Lines.pick(random, "You keep looking away, " + name + ". Lambs don't do that.", "Only the wolf has a reason to avoid my eyes, " + name + ".");
+                        case SELFISH -> Lines.pick(random, "Look at me, " + name + ". Now.", "Stop hiding your face, " + name + ".");
+                        case RECKLESS -> Lines.pick(random, "Look at me, " + name + "!", "Turn around, " + name + "!");
+                    };
+                    contestant.speak("You've been trying to catch " + name + "'s eyes and they keep looking away, which is what the wolf would do.", line);
+                    if (suspect.get(id) == null) {
+                        suspect.put(id, mark.getUuid());
+                    }
                 }
             } else {
                 contestant.look(null);
@@ -440,6 +507,25 @@ final class WolfAndLambs extends Game {
                 }
             }
         }
+    }
+
+    /** {@code c} looked {@code other} in the eye and nothing happened: they're a lamb too, for now. */
+    private void ruleOut(Contestant c, LivingEntity other) {
+        Set<UUID> out = ruledOut.computeIfAbsent(c.getUuid(), k -> new HashSet<>());
+        if (!out.add(other.getUuid())) {
+            return;
+        }
+        String name = nameOf(other.getUuid());
+        c.remember("You looked " + name + " in the eye and nothing happened: " + name + " is a lamb, like you (unless the wolf has changed since).");
+        if (other.getUuid().equals(suspect.get(c.getUuid()))) {
+            suspect.remove(c.getUuid());
+        }
+        c.look(null);
+        target.remove(c.getUuid());
+        if (c.quiet() && random.nextFloat() < 0.6F) {
+            c.say(Lines.pick(random, "Okay. It's not you, " + name + ".", "You're a lamb too.", "Not you. Then who?", "Nothing. So it's not you."));
+        }
+        note(c.name() + " looked " + name + " in the eye: nothing happened.", false);
     }
 
     private BlockPos farthestHide(LivingEntity from) {
@@ -552,7 +638,23 @@ final class WolfAndLambs extends Game {
                 + "collar explodes and only the wolf lives. " + (isWolf ? "You are the WOLF right now: you have to keep everyone from looking you in the eye."
                 : "You are a LAMB right now: you die unless you catch the wolf's eyes.")
                 + (suspected != null && !suspected.equals(who.getUuid()) ? " You think the wolf is " + nameOf(suspected) + "." : "")
+                + ruledOutText(who)
                 + " " + timeLeft / 20 / 60 + " minutes left.";
+    }
+
+    private String ruledOutText(Contestant who) {
+        Set<UUID> out = ruledOut.get(who.getUuid());
+        if (who.getUuid().equals(wolf) || out == null || out.isEmpty()) {
+            return "";
+        }
+        List<String> names = new ArrayList<>();
+        for (UUID id : out) {
+            if (isPlaying(id)) {
+                names.add(nameOf(id));
+            }
+        }
+        return names.isEmpty() ? "" : " You've already looked " + String.join(" and ", names) + " in the eye and nothing happened: they're lambs like "
+                + "you, not the wolf (unless the wolf has changed hands since). There's no point staring at them again; look for whoever you haven't.";
     }
 
     @Override

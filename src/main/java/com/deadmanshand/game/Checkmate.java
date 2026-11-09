@@ -278,6 +278,7 @@ final class Checkmate extends Game {
             switching.add(id);
         }
         world.playSound(null, target.getX(), target.getY(), target.getZ(), SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, SoundCategory.PLAYERS, 0.6F, 2.0F);
+        instinct.flinch(target.getPos(), 6.0, 0.1F);
         world.spawnParticles(ParticleTypes.ELECTRIC_SPARK, target.getX(), target.getY() + 1.2, target.getZ(), 20, 0.3, 0.4, 0.3, 0.1);
         target.damage(net.minecraft.entity.damage.DamageSource.LIGHTNING_BOLT, 1.0F);
         if (target instanceof Contestant c) {

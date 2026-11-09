@@ -245,6 +245,7 @@ final class KickTheCan extends Game {
         LivingEntity e = entity(id);
         if (e != null) {
             world.playSound(null, e.getX(), e.getY(), e.getZ(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 3.0F, 1.0F);
+            instinct.flinch(e.getPos(), 18.0, 0.3F);
             world.spawnParticles(ParticleTypes.EXPLOSION_EMITTER, e.getX(), e.getY() + 1, e.getZ(), 1, 0, 0, 0, 0);
             for (LivingEntity near : living()) {
                 if (near != e && near.squaredDistanceTo(e) < 4 * 4) {
@@ -531,5 +532,17 @@ final class KickTheCan extends Game {
             }
         }
         return text.toString();
+    }
+
+    // --- for your heart -------------------------------------------------------------------------------------------
+
+    /** A bomb in your hands, its fuse burning down. */
+    @Override
+    protected float hazard(ServerPlayerEntity player) {
+        Integer k = holding.get(player.getUuid());
+        if (k == null || k < 0 || k >= fuse.length) {
+            return 0.0F;
+        }
+        return (float) Math.min(1.0, 0.4 + 0.6 * (1.0 - Math.min(1200, fuse[k]) / 1200.0));
     }
 }
