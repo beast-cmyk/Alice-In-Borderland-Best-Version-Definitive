@@ -416,7 +416,7 @@ final class Screen {
                 // row 0 is the top of the picture
                 BlockPos wall = bestBase.offset(right, c).up(DOWN - 1 - r);
                 ItemStack map = FilledMapItem.createMap(world, 29_000_000, 29_000_000, (byte) 0, false, false);
-                screen.maps[r * ACROSS + c] = FilledMapItem.getMapState(map, world);
+                screen.maps[r * ACROSS + c] = FilledMapItem.getMapState(FilledMapItem.getMapId(map), world);
                 GlowItemFrameEntity frame = new GlowItemFrameEntity(world, wall.offset(bestFace), bestFace);
                 frame.setHeldItemStack(map);
                 NbtCompound nbt = new NbtCompound();
