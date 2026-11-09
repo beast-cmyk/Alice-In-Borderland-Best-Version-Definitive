@@ -119,6 +119,55 @@ public abstract class Puppet extends PathAwareEntity {
         setPersistent();
     }
 
+    /**
+     * Its routes are worked out by a pathfinder that won't step where the game it's in says not to: outside the venue
+     * while the game's on (that's the laser), or on ground that kills (a minefield). Left to itself the pathfinder takes
+     * the shortest way, across the mines or along the street outside.
+     */
+    @Override
+    protected net.minecraft.entity.ai.pathing.EntityNavigation createNavigation(World world) {
+        Puppet self = this;
+        return new MobNavigation(this, world) {
+            @Override
+            protected net.minecraft.entity.ai.pathing.PathNodeNavigator createPathNodeNavigator(int range) {
+                this.nodeMaker = new SafeNodes(self);
+                this.nodeMaker.setCanEnterOpenDoors(true);
+                return new net.minecraft.entity.ai.pathing.PathNodeNavigator(this.nodeMaker, range);
+            }
+        };
+    }
+
+    /** Ground the pathfinder treats as a wall: where the game this one is playing says not to go. */
+    static final class SafeNodes extends net.minecraft.entity.ai.pathing.LandPathNodeMaker {
+        private final Puppet who;
+        @Nullable
+        private com.deadmanshand.game.Game game;
+
+        SafeNodes(Puppet who) {
+            this.who = who;
+        }
+
+        @Override
+        public void init(net.minecraft.world.chunk.ChunkCache cachedWorld, net.minecraft.entity.mob.MobEntity entity) {
+            super.init(cachedWorld, entity);
+            game = com.deadmanshand.game.Games.gameOf(who);
+        }
+
+        @Override
+        public net.minecraft.entity.ai.pathing.PathNodeType getDefaultNodeType(net.minecraft.world.BlockView world, int x, int y, int z) {
+            if (game != null && game.forbidden(x, y, z)) {
+                return net.minecraft.entity.ai.pathing.PathNodeType.BLOCKED;
+            }
+            return super.getDefaultNodeType(world, x, y, z);
+        }
+    }
+
+    /** Whether the game it's in says not to stand at {@code x, y, z}. */
+    boolean forbidden(double x, double y, double z) {
+        com.deadmanshand.game.Game game = com.deadmanshand.game.Games.gameOf(this);
+        return game != null && game.forbidden((int) Math.floor(x), (int) Math.floor(y), (int) Math.floor(z));
+    }
+
     @Override
     protected void initGoals() {
         goalSelector.add(0, new SwimGoal(this));
@@ -531,7 +580,7 @@ public abstract class Puppet extends PathAwareEntity {
                 double x = mob.getX() + (goal.x - mob.getX()) * t;
                 double z = mob.getZ() + (goal.z - mob.getZ()) * t;
                 BlockPos under = new BlockPos((int) Math.floor(x), (int) Math.floor(mob.getY() - 0.5), (int) Math.floor(z));
-                if (mob.world.getBlockState(under).getCollisionShape(mob.world, under).isEmpty()) {
+                if (mob.world.getBlockState(under).getCollisionShape(mob.world, under).isEmpty() || mob.forbidden(x, mob.getY() + 0.1, z)) {
                     return false;
                 }
             }
