@@ -96,10 +96,21 @@ horse's head and shoots at anyone it sees with a submachine gun. If it touches y
 only sees straight ahead, so stay out of its line of sight. The courtyard is mined, and a bomb goes off when the
 twenty minutes are up.
 
+The others react to it the way frightened people do. When it sees them, they see it close by, or it shoots at them,
+they flinch first. Then, depending on who they are and how scared they already are, some freeze for a moment, the calm
+ones slip quietly out of its sight, and the terrified ones bolt. Either way they go for the nearest place it can't see
+(into a flat, round a corner), not just further away. Once hidden they keep still a while and warn the others where
+it is ("It's on floor 4, north side!"), then decide what to do next. Gunfire they only hear makes them turn toward it
+and keep away from that floor for a minute.
+
 ### 7♥ WOLF AND LAMBS
 A glasshouse full of hedges and trees. One of you is the **wolf** and the rest are lambs. Your goggles tell you which
 you are. When the wolf and a lamb look each other in the eye, they swap. When the fifteen minutes are up, every lamb's
 collar goes off, and only the wolf walks out.
+
+The others play it like people would: a lamb who looks you in the eye and sees nothing happen knows you're a lamb too,
+and moves on to whoever they haven't looked at yet. Someone who keeps turning their face away gets suspected. When the
+wolf changes hands, everyone's back to not knowing.
 
 ### 4♣ DISTANCE
 You wake up in a dark highway tunnel beside an old, graffiti-covered bus. The rules only say *reach the goal*, and
@@ -326,6 +337,37 @@ Every venue stands on its own fixed lot, so you can find them again:
 | 6♠ | Beast Hunt | -156, -5 |
 | 10♥ | The Lagoon (camp) | 292, -5 |
 | J♥ | Solitary Confinement | -92, -69 |
+
+## Sound and fear
+
+**Every venue has its own sound**, made from Minecraft's and played now and then around you, never as a loop you'd
+notice: water dripping and a light humming in an empty building; wind, distant thunder, a dog howling and someone
+else's game far off in the streets; running water and pipes knocking in the sewer; the wheels and the clack of the rails
+on the train; chimes at the shrine; frogs in the glasshouse; the bonfire at the camp; creaking wood in the old hall;
+steel doors in the prison; a clock ticking on the wall at the card tables; and nothing at all in the Joker's white room.
+
+**Your heart.** When something's hunting you and it's close (more if it's seen you), when the clock's in its last
+minute, when your grip is going, the water's rising toward you, the room's about to burn, there's a bomb in your hands,
+or your score is nearing minus ten, you hear your heart, faster and louder the worse it is. There's a sting when you've
+just been spotted, a boom when the game starts, a dread when someone dies near you, and a tick for each of the last ten
+seconds. All of it is on Minecraft's **Ambient/Environment** volume slider.
+
+## The others' instincts
+
+When something's hunting them, the others react the way frightened people do, in every game that has a hunter: Tag's
+horse mask, the King of Spades, the Witch Hunt's guards (guns), the cats of the Beast Hunt and the Jack's men (they chase
+you). They flinch first. Then, by who they are and how scared they already are, some freeze for a moment, the calm ones
+slip away quietly, the terrified ones bolt. From a gun they go for the nearest place it can't see them (a doorway, a
+room, round a corner); from something that chases, away from it, round things, toward a refuge (the haunted house).
+Once clear they keep still a while, warn the others where it is ("The King's about 20 metres north of here!") and then
+decide what to do next. In every game they also flinch, and some cry out, at explosions, fire, collapses and shocks.
+
+## How the others move
+
+While a game is on, the others' routes never take them out of the venue (that's the laser) or across ground that kills
+(Tag's minefield): their pathfinder treats those places as walls, so they go round. When someone is shooting (the
+horse mask in Tag, the King of Spades, the guards in the Witch Hunt), they run for the nearest place out of the
+shooter's sight (a doorway, a room, round a corner), not just away from the gun.
 
 ## Talking to the other players (optional AI)
 
